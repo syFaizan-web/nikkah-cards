@@ -98,7 +98,11 @@ export function ProductDetailClient({ product }: { product: Product }) {
               <QuantitySelector value={quantity} onChange={setQuantity} />
             </div>
 
-            <WhatsAppButton message={message} size="lg" className="w-full sm:w-auto">
+            <WhatsAppButton
+              message={message}
+              size="lg"
+              className="hidden w-full sm:w-auto lg:inline-flex"
+            >
               Order / Customize on WhatsApp
             </WhatsAppButton>
 
@@ -112,9 +116,9 @@ export function ProductDetailClient({ product }: { product: Product }) {
       {/* Mobile sticky bottom bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-between gap-3 border-t border-border/50 bg-background/95 px-4 py-3 backdrop-blur-md md:hidden">
         <div className="flex flex-col">
-          <span className="text-xs text-muted-foreground">Starting from</span>
+          <span className="text-xs text-muted-foreground">Total from</span>
           <span className="font-serif text-base font-semibold text-foreground">
-            {formatPrice(product.startingPrice, product.currency)}
+            {formatPrice(product.startingPrice * quantity, product.currency)}
           </span>
         </div>
         <a

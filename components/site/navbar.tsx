@@ -37,35 +37,36 @@ export function Navbar() {
 
   return (
     <>
-      <div className="overflow-hidden bg-primary py-2 text-[11px] tracking-wide text-primary-foreground sm:text-xs">
-        <div className="flex w-max animate-[topbar-scroll_22s_linear_infinite] items-center whitespace-nowrap">
-          <div className="flex items-center px-4">
-            <span>Premium Nikkah cards, made with love in Pakistan</span>
-            <span className="mx-3 text-primary-foreground/50">•</span>
-            <Link href="/shipping" className="underline underline-offset-2 hover:text-accent">
-              Nationwide delivery available
-            </Link>
-          </div>
-          <div className="flex items-center px-4" aria-hidden="true">
-            <span>Fast & safe delivery across Pakistan</span>
-            <span className="mx-3 text-primary-foreground/50">•</span>
-            <span>Custom orders delivered with care</span>
-          </div>
-          <div className="flex items-center px-4" aria-hidden="true">
-            <span>Premium Nikkah cards, made with love in Pakistan</span>
-            <span className="mx-3 text-primary-foreground/50">•</span>
-            <span>Nationwide delivery available</span>
+      <div className="sticky top-0 z-50">
+        <div className="overflow-hidden bg-primary py-2 text-[11px] tracking-wide text-primary-foreground sm:text-xs">
+          <div className="flex w-max animate-[topbar-scroll_22s_linear_infinite] items-center whitespace-nowrap">
+            <div className="flex items-center px-4">
+              <span>Premium Nikkah cards, made with love in Pakistan</span>
+              <span className="mx-3 text-primary-foreground/50">•</span>
+              <Link href="/shipping" className="underline underline-offset-2 hover:text-accent">
+                Nationwide delivery available
+              </Link>
+            </div>
+            <div className="flex items-center px-4" aria-hidden="true">
+              <span>Fast & safe delivery across Pakistan</span>
+              <span className="mx-3 text-primary-foreground/50">•</span>
+              <span>Custom orders delivered with care</span>
+            </div>
+            <div className="flex items-center px-4" aria-hidden="true">
+              <span>Premium Nikkah cards, made with love in Pakistan</span>
+              <span className="mx-3 text-primary-foreground/50">•</span>
+              <span>Nationwide delivery available</span>
+            </div>
           </div>
         </div>
-      </div>
-      <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          scrolled
-            ? 'bg-background/90 backdrop-blur-md shadow-sm border-b border-border/50'
-            : 'bg-background/40 backdrop-blur-sm'
-        }`}
-      >
-        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <header
+          className={`w-full transition-all duration-300 ${
+            scrolled
+              ? 'bg-background/90 backdrop-blur-md shadow-sm border-b border-border/50'
+              : 'bg-background/40 backdrop-blur-sm'
+          }`}
+        >
+          <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="group flex items-center gap-2">
             <span className="font-serif text-xl font-semibold tracking-wide text-foreground transition-colors group-hover:text-accent">
               Faiz Studio
@@ -118,8 +119,9 @@ export function Navbar() {
           >
             <Menu className="h-5 w-5 text-foreground" />
           </button>
-        </nav>
-      </header>
+          </nav>
+        </header>
+      </div>
 
       <AnimatePresence>
         {open && (
